@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    //input
+    string product_name;
+    double unit_price;
+    int quantity;
+    double discount_percentage;
+    double shipping_box;
+    int unit_box;
+    double SubTotal;
+    double DiscountAmount;
+    double DiscountedTotal;
+    double ExactBoxes;
+    int BoxesRequired;
+    double ShippingTotal;
+    double FinalAmount;
+
+    cout << "Enter Product Name:";
+    getline(cin, product_name);
+    cout << "\nEnter Unit Price:";
+    cin >> unit_price;
+    cout << "\nEnter Quantity:";
+    cin >> quantity;
+    cout << "\nEnter Discount Percentage:";
+    cin >> discount_percentage;
+    cout << "\nEnter Shipping Fee Per Box: ";
+    cin >> shipping_box;
+    cout << "\nEnter Units Per Box:";
+    cin >> unit_box;
+
+    //computations
+    SubTotal = unit_price * quantity;
+    DiscountAmount = SubTotal * (discount_percentage / 100.0);
+    DiscountedTotal = SubTotal - DiscountAmount;
+    ExactBoxes = (double)quantity / unit_box;
+    BoxesRequired = ceil(ExactBoxes);
+    ShippingTotal = BoxesRequired * shipping_box;
+    FinalAmount = DiscountedTotal + ShippingTotal;
+    
+    //output
+    cout << fixed << setprecision(2);
+    cout << "\n\t----- INVOICE -----"<<endl;
+    cout << "\tProduct: " << product_name <<endl;
+    cout << "\tUnitPrice: " << unit_price << endl;
+    cout << "\tQuantity: " << quantity <<endl;
+    cout << "\tSubtotal: " << SubTotal <<endl;
+    cout << "\tDiscount Amount: " << DiscountAmount <<endl;
+    cout << "\tDiscounted Total: " << DiscountedTotal <<endl;
+    cout << "\tExact Boxes: " << ExactBoxes <<endl;
+    cout << "\tBoxes Required: " << BoxesRequired <<endl;
+    cout << "\tShipping Total: " << ShippingTotal <<endl;
+    cout << "\tFinal Amount Due: " << FinalAmount <<endl;
+
+    
+    return 0;
+}
