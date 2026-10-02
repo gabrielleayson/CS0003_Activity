@@ -1,0 +1,36 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    //input
+    int N_attendees;
+    int N_seatspertable;
+    double ExactTables;
+    int TablesRequired;
+    int TotalSeats;
+    int UnusedSeats;
+
+    cout << "Enter Number of Attendees:";
+    cin >> N_attendees;
+    cout << "\nEnter Number of Seats Per Table:";
+    cin >> N_seatspertable;
+
+    //computation
+    ExactTables = round(((double)N_attendees / N_seatspertable)*100)/100;
+    TablesRequired = ceil(ExactTables);
+    TotalSeats = TablesRequired * N_seatspertable;
+    UnusedSeats = TotalSeats - N_attendees;
+
+    //output
+    cout << fixed << setprecision(2);
+    cout << "\nExact Table Requirement: " << ExactTables <<endl;
+    cout << fixed << setprecision(0);
+    cout << "\nTables Required: " << TablesRequired <<endl;
+    cout << "\nTotal Available Seats: " << TotalSeats <<endl;
+    cout << "\nUnused Seats: " << UnusedSeats <<endl;
+
+    return 0;
+}
