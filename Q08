@@ -1,0 +1,47 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+    //input
+    double temp_1;
+    double temp_2;
+    double temp_3;
+    double Average;
+    double Difference;
+
+
+    cout << "Enter Temperature 1:";
+    cin >> temp_1;
+    cout << "Enter Temperature 2:";
+    cin >> temp_2;
+    cout << "Enter Temperature 3:";
+    cin >> temp_3;
+
+
+    //computations
+    Average = (temp_1 + temp_2 + temp_3) / 3;
+    Difference = fabs(temp_1 - temp_3);
+    floor(Average);
+    ceil(Average);
+    trunc(Average);
+    round(Average);
+
+
+    cout << fixed << setprecision(3);
+    cout << "\n Average Temperature: " << Average <<endl;
+    cout << "\nAbsolute Difference: " << Difference <<endl;
+   
+    cout << fixed << setprecision(0);
+    cout << "\nFloor: " << floor(Average) << endl;
+    cout << "Ceil: " << ceil(Average) << endl;
+    cout << "Trunc: " << trunc(Average) <<endl;
+    cout << "Round: " << round(Average) <<endl;
+
+
+    return 0;
+}
+
