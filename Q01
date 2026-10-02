@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    //input
+    double meal_price;
+    double scharge_percentage;
+    int qty_ordered;
+    int N_students;
+    double SubTotal;
+    double ServiceCharge;
+    double FinalBill;
+    double StudentShare;
+    
+    cout << "Enter Meal Price:";
+    cin >> meal_price;
+    cout << "\nEnter Quantity Ordered:";
+    cin >> qty_ordered;
+    cout << "\nEnter Service-Charge Percentage:";
+    cin >> scharge_percentage;
+    cout << "\nEnter Number of Students Sharing the Bill:";
+    cin >> N_students;
+    
+    //computations
+    SubTotal = meal_price * qty_ordered;
+    ServiceCharge = SubTotal * (scharge_percentage / 100.0);
+    FinalBill = SubTotal + ServiceCharge;
+    StudentShare = FinalBill / N_students;
+    
+    //output
+    cout << fixed << setprecision(2);
+    cout << "\nSubTotal:₱" << SubTotal <<endl;
+    cout << "\nService Charge:₱" << ServiceCharge <<endl;
+    cout << "\nFinal Bill:₱" << FinalBill <<endl;
+    cout << "\nStudents Share:₱" << StudentShare <<endl;
+
+    return 0;
+}
+
+
+
