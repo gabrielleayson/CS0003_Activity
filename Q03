@@ -1,0 +1,53 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+    //input
+    double base_fare;
+    double distance_km;
+    double rate_km;
+    double toll_fee;
+    double booking_percentage;
+    int N_passengers;
+    double DistanceCharge;
+    double PreFeeTotal;
+    double BookingFee;
+    double GrandTotal;
+    double PassengerShare;
+   
+    cout << "Enter Base Fare:";
+    cin >> base_fare;
+    cout << "\nEnter Distance in Kilometer:";
+    cin >> distance_km;
+    cout << "\nEnter Rate Per Kilometers:";
+    cin >> rate_km;
+    cout << "\nEnter Toll Fee:";
+    cin >> toll_fee;
+    cout << "\nBooking Fee Percentage:";
+    cin >> booking_percentage;
+    cout << "\nNumber of Passengers:";
+    cin >> N_passengers;
+   
+    //computations
+    DistanceCharge = distance_km * rate_km;
+    PreFeeTotal = base_fare + DistanceCharge + toll_fee;
+    BookingFee = PreFeeTotal * (booking_percentage / 100.0);
+    GrandTotal = PreFeeTotal + BookingFee;
+    PassengerShare = GrandTotal / N_passengers;
+   
+    //output
+    cout << fixed << setprecision(2);
+    cout << "\nDistance Charge: ₱" << DistanceCharge <<endl;
+    cout << "\nPre-Fee Total: ₱" << PreFeeTotal <<endl;
+    cout << "\nBooking Fee: ₱" << BookingFee <<endl;
+    cout << "\nGrand Total:₱" << GrandTotal <<endl;
+    cout << "\nPassenger Share: ₱" << PassengerShare <<endl;
+
+
+    return 0;
+}
+
